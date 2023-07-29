@@ -1,0 +1,797 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+/* || Reset Styles */
+
+::before,
+::after,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 85%;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* || Utility Class */
+
+.hidden {
+  display: none !important;
+}
+
+/* || Container Styles */
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+  gap: 4em;
+}
+
+/* || Header Styles */
+
+.header {
+  grid-area: header;
+  padding: 1.2em 0.5em;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  font-size: 1.4rem;
+}
+
+.nav-right {
+  font-size: 2.2rem;
+}
+
+.fa-bars:hover {
+  cursor: pointer;
+  opacity: 80%;
+  transform: scale(110%);
+}
+
+/* || Nav Styles */
+
+.nav-items {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #100e1d;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "icon-nav"
+    "labels-nav";
+  font-weight: 700;
+}
+
+.icon-nav {
+  grid-area: icon-nav;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-right: 0.2em;
+  padding: 0.5em;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.fa-x {
+  transition: 0.4s ease-in-out transform;
+}
+
+.fa-x:is(:hover, :focus) {
+  cursor: pointer;
+  opacity: 80%;
+  transform: rotate(360deg);
+}
+
+.labels-nav {
+  grid-area: labels-nav;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 1.6rem;
+  gap: 1em;
+}
+
+.labels-nav a {
+  text-decoration: none;
+}
+
+.labels-nav a:any-link {
+  color: #ffffff;
+}
+
+.labels-nav a:is(:hover, :focus) {
+  border-bottom: 4px solid #ffffff;
+}
+
+/* || Main Styles */
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
+  grid-template-areas:
+    "main-sec1"
+    "main-sec2"
+    "main-sec3"
+    "main-sec4"
+    "main-sec5";
+  gap: 5em;
+  padding: 0 0.4em;
+}
+
+/* || Section 1 Styles */
+
+.main-sec1 {
+  grid-area: main-sec1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 120px 180px 1fr;
+  grid-template-areas:
+    "sec1-f-cont"
+    "main-img"
+    "sec1-s-cont";
+  gap: 1em;
+  padding: 1em;
+}
+
+.sec1-f-cont {
+  grid-area: sec1-f-cont;
+  margin-left: 2em;
+}
+
+.sec1-f-cont a {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.sec1-f-cont a:any-link {
+  color: #2d9cdb;
+}
+
+.sec1-f-cont a:hover {
+  opacity: 85%;
+}
+
+.sec1-h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 350px;
+  color: #333;
+}
+
+.main-sec1 img {
+  grid-area: main-img;
+  min-height: 100%;
+  border-radius: 2em;
+}
+
+.sec1-s-cont {
+  grid-area: sec1-s-cont;
+  padding: 0 1.8em;
+}
+
+.sec1-s-cont h2 {
+  width: 260px;
+  color: #333;
+}
+
+.p,
+.contact-us {
+  margin-top: 2em;
+}
+
+.p,
+label {
+  font-weight: 400;
+  color: #4f4f4f;
+}
+
+.contact-us p {
+  width: 100%;
+  height: 60px;
+  margin-top: 0.5em;
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.contact-us input,
+.contact-us button {
+  height: 100%;
+  border: none;
+  font-size: 1rem;
+}
+
+.contact-us input {
+  width: 70%;
+  padding: 0.8em;
+  outline: none;
+  color: #333;
+  background-color: #f2f2f2;
+}
+
+.contact-us button {
+  width: 26%;
+  font-weight: 700;
+  margin-right: 0.4em;
+  border-radius: 1.2em;
+  color: #f2f2f2;
+  background-color: #2d9cdb;
+}
+
+/* || Section 2 Styles */
+
+.main-sec2 {
+  grid-area: main-sec2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "h3"
+    "cards";
+  gap: 6em;
+  padding: 1.2em;
+}
+
+.h3 {
+  width: 300px;
+  margin-left: 1em;
+  color: #333;
+}
+
+.cards {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3em;
+  padding: 2em;
+}
+
+.card:hover {
+  -webkit-box-shadow: 1px 2px 29px -8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 2px 29px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 2px 29px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 2em;
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #fff;
+  border-radius: 0.5em;
+}
+
+.icon-1 {
+  background-color: #2d9cdb;
+}
+
+.icon-2 {
+  background-color: #27ae60;
+}
+
+.icon-3 {
+  background-color: #eb5757;
+}
+
+.sec2-h4 {
+  font-size: 1.6rem;
+}
+
+.main-sec2 p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.sec2-btn {
+  width: 50%;
+  padding: 1em 0.5em;
+  font-size: 1.2rem;
+  color: #828282;
+  border: none;
+  border-radius: 0.8em;
+}
+
+.card:hover .sec2-btn {
+  background-color: #2d9cdb;
+  color: #fff;
+}
+
+/* || Section 3 Styles */
+
+.main-sec3 {
+  grid-area: main-sec3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 110px;
+  gap: 3em;
+  padding: 0.5em;
+}
+
+.item1 {
+  width: 350px;
+  margin-left: 1.5em;
+}
+
+.desgin-ex-img {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+}
+
+.desgin-ex-img img {
+  border-radius: 2em;
+}
+
+.desgin-ex-img p {
+  color: #828282;
+}
+
+.desgin-ex-img h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.main-sec3 a {
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.main-sec3 a:any-link {
+  color: #2d9cdb;
+}
+
+.fa-arrow-right-long {
+  margin-left: 0.5em;
+}
+
+/* || Section 4 Styles */
+
+.main-sec4 {
+  grid-area: main-sec4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 340px;
+  padding: 0 0.5em;
+}
+
+.sec4-p {
+  font-size: 1.4rem;
+  color: #eb5757;
+}
+
+.sec4-first {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+}
+
+.sec4-first h3 {
+  font-size: 2.5rem;
+  width: 320px;
+  color: #333;
+}
+
+.sec4-first p {
+  font-size: 1.2rem;
+  width: 300px;
+}
+
+.sec4-second {
+  display: flex;
+  gap: 1em;
+}
+
+/* The Grater then sgin is for selecting Direct Children*/
+
+.sec4-second > img {
+  align-self: center;
+  border-radius: 2em;
+  width: 50%;
+  height: 50%;
+}
+
+.images-left {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+}
+
+.images-left img {
+  border-radius: 2em;
+}
+
+.images-left img:nth-child(1) {
+  align-self: left;
+  transform: scale(85%) translateX(-25px);
+}
+
+/* || Section 5 Styles */
+
+.main-sec5 {
+  grid-area: main-sec5;
+  padding: 0 0.5em;
+}
+
+.main-sec5 p {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.sec5-profile {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.sec5-profile img {
+  width: calc(25% - 6vw);
+  border-radius: 1.2em;
+}
+
+.left {
+  width: calc(75% + 6vw);
+}
+
+.left .sec5-name {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.left .sec5-career {
+  margin-top: 0.8em;
+  font-size: 1.2rem;
+  color: #828282;
+}
+
+/* || Footer Styles */
+
+.footer {
+  width: 100%;
+  height: 700px;
+  margin-top: 10em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 1em 2.5em;
+  background-color: #100e1d;
+}
+
+.footer-top {
+  margin-top: 1.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 75%;
+}
+
+.labels-nav-bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  list-style: none;
+  height: 180px;
+  font-weight: 400;
+}
+
+.labels-nav-bottom a {
+  text-decoration: none;
+}
+
+.labels-nav-bottom a:any-link {
+  color: #fff;
+}
+
+.labels-nav-bottom a:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+.middle div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.middle h4 {
+  font-size: 2rem;
+  color: #f2f2f2;
+}
+
+.svg {
+  display: block;
+}
+
+.svg:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.sec2-svg1::before,
+.sec2-svg2::before,
+.sec2-svg3::before {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-background-size: contain;
+  content: "";
+  width: 1.5em;
+  height: 2em;
+}
+
+.sec2-svg1::before {
+  background-image: url(./svg/instagram.svg);
+}
+
+.sec2-svg2::before {
+  background-image: url(./svg/linkedin.svg);
+}
+
+.sec2-svg3::before {
+  background-image: url(./svg/twitter.svg);
+}
+
+.footer-top .contact-us label {
+  color: #fff;
+}
+
+.footer-top .contact-us input {
+  width: 69%;
+}
+
+.footer-top .contact-us button {
+  width: 28%;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #f2f2f2;
+}
+
+@media (min-width: 556px) {
+  body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+  }
+  .container {
+    width: 75%;
+  }
+
+  /* || Section 1 Styles */
+  .sec1-s-cont {
+    max-width: 400px;
+  }
+
+  /* || Section 2 Styles */
+  .card {
+    align-self: center;
+    max-width: 400px;
+  }
+
+  /* || Section 3 Styles */
+  .desgin-ex-img {
+    justify-self: center;
+    max-width: 450px;
+  }
+
+  .see-more {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  /* || Section 5 Styles */
+  .sec5-profile img {
+    width: 15%;
+  }
+
+  /* || Footer Styles */
+  .footer-top .contact-us {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  /* || Main Styles */
+
+  .main {
+    gap: 8em;
+  }
+
+  /* || Nav Styles */
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-items {
+    display: grid !important;
+    width: fit-content;
+    min-height: 100%;
+    position: static;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "labels-nav";
+    margin-right: 0.5em;
+    background-color: #fff;
+  }
+
+  .icon-nav {
+    display: none;
+  }
+
+  .labels-nav {
+    flex-flow: row nowrap;
+    justify-content: right;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: calc(0.6em + 1vw);
+  }
+
+  .labels-nav a:any-link {
+    color: #333;
+  }
+
+  .labels-nav a:is(:hover, :focus) {
+    opacity: 80%;
+  }
+
+  /* || Section 1 Styles */
+  .main-sec1 {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 120px repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-areas:
+      ". sec1-f-cont"
+      "main-img main-img"
+      ". sec1-s-cont";
+  }
+
+  /* || Section 5 Styles */
+  .sec5-profile img {
+    width: 12%;
+  }
+
+  /* || Footer Styles */
+
+  .footer {
+    height: 400px;
+  }
+
+  .footer-top {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 85%;
+  }
+
+  /* || Section 1 Styles */
+  .main-sec1 {
+    grid-template-columns: 130px 1fr;
+  }
+
+  /* || Section 2 Styles */
+  .cards {
+    flex-flow: row nowrap;
+  }
+
+  /* || Section 3 Styles */
+
+  .main-sec3 {
+    grid-area: main-sec3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 110px repeat(auto-fit, minmax(1fr, 1fr)) 10px;
+    grid-template-areas:
+      "item1 ."
+      "item2 item3"
+      "item4 item5"
+      ". item6";
+    gap: 1em;
+  }
+
+  .item2,
+  .item4 {
+    justify-self: end;
+    margin-top: 8em;
+  }
+
+  .item3,
+  .item5 {
+    justify-self: start;
+  }
+
+  .item1 {
+    grid-area: item1;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item3 {
+    grid-area: item3;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+  .item6 {
+    grid-area: item6;
+  }
+
+  /* || Section 4 Styles */
+
+  .main-sec4 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  /* || Section 5 Styles */
+  .main-sec5 {
+    max-width: 65%;
+  }
+}
